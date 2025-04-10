@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejemplo de Live Region mal implementada</title>
+</head>
+<body>
+
+<div aria-live="off" aria-atomic="true" id="anuncio">
+<!-- El contenido del anuncio se actualiza dinámicamente -->
+</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+<p>Cras venenatis purus auctor, vestibulum sapien sed, convallis ex. Phasellus malesuada ornare elit, vel rutrum ante convallis sed. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+
+<p>Maecenas faucibus mollis interdum. Donec id elit non mi porta gravida at eget metus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+
+<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras venenatis purus auctor, vestibulum sapien sed, convallis ex.</p>
+
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras venenatis purus auctor, vestibulum sapien sed, convallis ex.</p>
+
+<p>Donec ullamcorper nulla non metus auctor fringilla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas faucibus mollis interdum.</p>
+
+<p>Phasellus malesuada ornare elit, vel rutrum ante convallis sed. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+<script>
+// Lista de personajes de ciencia ficción
+var personajes = [
+"Watson",
+"Spock",
+"Luke Skywalker",
+"Han Solo",
+"Leia Organa",
+"C-3PO",
+"R2-D2",
+"Doctor Who",
+"Marty McFly",
+"E.T."
+];
+
+// Índice actual del personaje
+var indice = 0;
+
+// Función para obtener el saludo
+function obtenerSaludo() {
+var hora = new Date().getHours();
+var saludo;
+if (hora < 12) {
+saludo = "Buenos días ";
+} else if (hora < 18) {
+saludo = "Buenas tardes ";
+} else {
+saludo = "Buenas noches ";
+}
+return saludo + personajes[indice];
+}
+
+// Actualiza el contenido del anuncio cada 10 segundos
+setInterval(function() {
+var anuncio = document.getElementById("anuncio");
+anuncio.innerHTML = "";
+anuncio.innerHTML = obtenerSaludo();
+indice = (indice + 1) % personajes.length;
+}, 2000); // 2000 milisegundos = 2 segundos
+
+// Inicializa el anuncio con el primer personaje
+document.getElementById("anuncio").innerHTML = obtenerSaludo();
+</script>
+</body>
+</html>

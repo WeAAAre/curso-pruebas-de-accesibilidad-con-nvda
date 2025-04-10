@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejemplos de formularios</title>
+</head>
+<body>
+    <h1>Ejemplos con formularios</h1>
+<h2>Ejemplo de formulario de contacto inaccesible</h2>
+<form>
+<table>
+<tr>
+<td>Nombre:</td>
+<td><input type="text" name="nombre"></td>
+</tr>
+<tr>
+<td>Apellido:</td>
+<td><input type="text" name="apellido"></td>
+</tr>
+<tr>
+<td>Correo:</td>
+<td><input type="email" name="correo"></td>
+</tr>
+<tr>
+<td>Mensaje:</td>
+<td><textarea name="mensaje"></textarea></td>
+</tr>
+<tr>
+<td colspan="2"><input type="submit" value="Enviar"></td>
+</tr>
+</table>
+</form>
+<hr>
+
+<h2>Ejemplo de formulario de contacto accesible</h2>
+<form>
+<div>
+<label for="nombre">Nombre:</label>
+<input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
+</div>
+<div>
+<label for="apellido">Apellido:</label>
+<input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido">
+</div>
+<div>
+<label for="correo">Correo:</label>
+<input type="email" id="correo" name="correo" placeholder="Ingrese su correo electrónico">
+</div>
+<div>
+<label for="mensaje">Mensaje:</label>
+<textarea id="mensaje" name="mensaje" placeholder="Ingrese su mensaje"></textarea>
+</div>
+<div>
+<input type="submit" value="Enviar">
+</div>
+</form>
+</body>
+</html>
